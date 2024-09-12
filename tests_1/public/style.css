@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 1500px;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.box {
+    border: 1px solid black;
+    position: relative;
+}
+/* 1. Krāsu palete ar animāciju */
+#box1 {
+    background-color: green; /* Initial green color */
+    overflow: hidden;
+    position: relative; /* Make sure this container is positioned relative for the image animation */
+}
+
+#box1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/your-image.jpg'); /* Update with the correct path to your image */
+    background-size: cover;
+    background-position: center;
+    transition: left 0.5s ease-in-out; /* Smooth sliding effect */
+}
+
+#box1:hover::before {
+    left: 0; /* Slide the image into view */
+}
+
+/* 2. Confetti rain */
+#box2 {
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    animation: fall 3s linear infinite;
+}
+@keyframes fall {
+    to { transform: translateY(1000px); }
+}
+
+/* 3. Poga ar lapas rotāciju */
+#box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rotate-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 2s;
+}
+
+/* 4. Elpojošs burbulis */
+#box4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bubble {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 150, 255, 0.7);
+    border-radius: 50%;
+    animation: breathe 6s infinite;
+}
+@keyframes breathe {
+    0%, 100% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+}
+
+/* 5. Href linki */
+#box5 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.link {
+    color: blue;
+    margin-bottom: 10px;
+    transition: color 1s;
+}
+.link:hover {
+    color: green;
+}
+.link:active {
+    color: red;
+}
+
+/* 6. Weather API */
+#box6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #e0f7fa;
+}
+
+/* 7-9. DB Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+input, button {
+    padding: 10px;
+}
