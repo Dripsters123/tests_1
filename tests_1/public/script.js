@@ -12,21 +12,45 @@
         }
         createConfetti();
 
-        // 3. Page rotate
+        let isRotated = false;
+
         document.querySelector('.rotate-button').addEventListener('click', function() {
-            document.body.style.transform = 'rotate(360deg)';
+            if (!isRotated) {
+                document.body.classList.add('rotate-cw');
+            } else {
+                document.body.classList.remove('rotate-cw');
+                document.body.classList.add('rotate-ccw');
+            }
+            isRotated = !isRotated;
+        
+            // Reset the class after rotation
             setTimeout(() => {
-                document.body.style.transform = 'rotate(-360deg)';
+                document.body.classList.remove('rotate-ccw');
             }, 2000);
         });
 
-        // 6. Weather API
-        async function fetchWeather() {
-            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Cesis,LV&appid=YOUR_API_KEY&units=metric');
-            const data = await response.json();
-            document.getElementById('box6').textContent = `Temperatūra Cēsīs: ${data.main.temp}°C, ${data.weather[0].description}`;
+        // Function to fetch and display weather information
+async function fetchWeather() {
+    try {
+        // Replace 'YOUR_API_KEY' with your actual API key
+        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Cesis,LV&appid=RKzjAkZ4Y537p2xD&units=metric');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-        fetchWeather();
+        const data = await response.json();
+        // Display weather data in #box6
+        const weatherElement = document.getElementById('box6');
+        weatherElement.textContent = `Temperatūra Cēsīs: ${data.main.temp}°C, ${data.weather[0].description}`;
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+        const weatherElement = document.getElementById('box6');
+        weatherElement.textContent = 'Kļūda iegūstot laika prognozi.';
+    }
+}
+
+// Call the function to fetch and display the weather
+fetchWeather();
+
 
         // 7-9. DB Operations (Placeholder)
         document.getElementById('add-user-form').addEventListener('submit', function(e) {
@@ -41,3 +65,35 @@
             e.preventDefault();
             alert('Lietotājs dzēsts!');
         });
+document.querySelectorAll('#box5 .link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+
+        // Remove 'active' class from all links
+        document.querySelectorAll('#box5 .link').forEach(l => l.classList.remove('active'));
+
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+
+        // Optionally, navigate to the link after a short delay
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 100);
+    });
+});
+document.querySelectorAll('#box5 .link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior
+
+        // Remove 'active' class from all links
+        document.querySelectorAll('#box5 .link').forEach(l => l.classList.remove('active'));
+
+        // Add 'active' class to the clicked link
+        this.classList.add('active');
+
+        // Optionally, navigate to the link after a short delay
+        setTimeout(() => {
+            window.location.href = this.href;
+        }, 100);
+    });
+});

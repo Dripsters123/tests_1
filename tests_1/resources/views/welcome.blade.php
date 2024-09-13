@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confetti Rain</title>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
-    
 </head>
 <body>
 
     <div class="container">
-        <div class="box" id="box1"><img></img></div>
+        <div class="box" id="box1">
+            <!-- Image hidden under the green block -->
+            <img src="{{url('images/vtdt.jpg')}}" alt="Image" class="sliding-image"/>
+        </div>
         <div class="box" id="box2"></div>
         <div class="box" id="box3">
             <button class="rotate-button">Apgriezt mājaslapu</button>
@@ -19,11 +21,11 @@
             <div class="bubble"></div>
         </div>
         <div class="box" id="box5">
-            <a href="#" class="link">Links 1</a>
-            <a href="#" class="link">Links 2</a>
-            <a href="#" class="link">Links 3</a>
-            <a href="#" class="link">Links 4</a>
-            <a href="#" class="link">Links 5</a>
+            <a href="https://www.google.com/" class="link">Google</a>
+            <a href="https://www.youtube.com/" class="link">Youtube</a>
+            <a href="https://www.rdveikals.lv/" class="link">Electronics</a>
+            <a href="https://www.amazon.com/" class="link">Amazon</a>
+            <a href="https://www.e-klase.lv/" class="link">E-klase</a>
         </div>
         <div class="box" id="box6">Weather Data</div>
         <div class="box" id="box7">
@@ -52,7 +54,6 @@
         </div>
     </div>
 
-    
-    <script src="{{ asset('script.js') }} "></script>
+    <script src="{{ asset('script.js') }}"></script>
 </body>
 </html>
