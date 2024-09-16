@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    transition: transform 2s ease-in-out; /* Smooth transition for rotation */
+    transition: transform 2s ease-in-out; 
 }
 .rotate-cw {
     transform: rotate(360deg);
@@ -25,30 +25,30 @@ body {
     border: 1px solid black;
     position: relative;
 }
-/* 1. Krāsu palete ar animāciju */
+
 #box1 {
-    background-color: green; /* Initial green color */
+    background-color: green; 
     overflow: hidden;
     position: relative;
-    display: flex; /* Enable centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
 
 .sliding-image {
     position: absolute;
     top: 0;
-    left: 100%; /* Start off-screen on the right */
-    width: 100%; /* Let the image take full width */
-    height: 100%; /* Maintain aspect ratio */
-    transition: left 0.5s ease-in-out; /* Smooth sliding effect */
+    left: 100%; 
+    width: 100%; 
+    height: 100%; 
+    transition: left 0.5s ease-in-out; 
 }
 
 #box1:hover .sliding-image {
-    left: 0; /* Slide the image into view */
+    left: 0; 
 }
 
-/* 2. Confetti rain */
+
 #box2 {
     background-color: #f0f0f0;
     overflow: hidden;
@@ -64,7 +64,6 @@ body {
     to { transform: translateY(1000px); }
 }
 
-/* 3. Poga ar lapas rotāciju */
 #box3 {
     display: flex;
     justify-content: center;
@@ -77,7 +76,6 @@ body {
     transition: transform 2s;
 }
 
-/* 4. Elpojošs burbulis */
 #box4 {
     display: flex;
     justify-content: center;
@@ -86,7 +84,7 @@ body {
 .bubble {
     width: 100px;
     height: 100px;
-    background-color: rgba(0, 150, 255, 0.7);
+    background-color:(rgba(0, 0, 0, 0.38));
     border-radius: 50%;
     animation: breathe 6s infinite;
 }
@@ -95,17 +93,17 @@ body {
     50% {transform: scale(1.5);}
 }
 
-/* 5. Href linki */
+
 #box5 {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center items vertically */
-    align-items: center;     /* Center items horizontally */
-    height: 100%;            /* Ensure the container takes up full height */
-    padding: 20px;          /* Add padding if needed */
+    justify-content: center; 
+    align-items: center;    
+    height: 100%;            
+    padding: 20px;           
 }
 .link {
-    color: blue;
+    color: rgb(0, 60, 255);
     margin-bottom: 10px;
     transition: color 1s;
     text-align: center;

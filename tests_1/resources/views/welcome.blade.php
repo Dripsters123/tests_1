@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confetti Rain</title>
+    <title>3x3 table</title>
     <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 <body>
 
     <div class="container">
         <div class="box" id="box1">
-            <!-- Image hidden under the green block -->
+            
             <img src="{{url('images/vtdt.jpg')}}" alt="Image" class="sliding-image"/>
         </div>
         <div class="box" id="box2"></div>
         <div class="box" id="box3">
-            <button class="rotate-button">Apgriezt mājaslapu</button>
+            <button class="rotate-button">Click for surprise</button>
         </div>
         <div class="box" id="box4">
             <div class="bubble"></div>
         </div>
         <div class="box" id="box5">
-            <a href="https://www.google.com/" class="link">Google</a>
             <a href="https://www.youtube.com/" class="link">Youtube</a>
-            <a href="https://www.rdveikals.lv/" class="link">Electronics</a>
-            <a href="https://www.amazon.com/" class="link">Amazon</a>
+            <a href="https://www.google.com/" class="link">Google</a>
             <a href="https://www.e-klase.lv/" class="link">E-klase</a>
+            <a href="https://www.y8.com/" class="link">Spēles</a>
+            <a href="http://pt.edu.lv/pt/stundas.php?id=m&g=IPa22&dat=2024-09-16/" class="link">Stundu saraksts</a>
         </div>
-        <div class="box" id="box6">Weather Data</div>
+       <div class="box" id="box6">Laikapstākļi</div>
         <div class="box" id="box7">
             <form id="add-user-form">
                 <input type="text" id="name" placeholder="Vārds" required>
@@ -56,4 +56,4 @@
 
     <script src="{{ asset('script.js') }}"></script>
 </body>
-</html>
+</html>*/
