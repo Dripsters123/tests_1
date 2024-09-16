@@ -8,9 +8,8 @@
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
         <div class="box" id="box1">
-            
             <img src="{{url('images/vtdt.jpg')}}" alt="Image" class="sliding-image"/>
         </div>
         <div class="box" id="box2"></div>
@@ -27,7 +26,7 @@
             <a href="https://www.y8.com/" class="link">Spēles</a>
             <a href="http://pt.edu.lv/pt/stundas.php?id=m&g=IPa22&dat=2024-09-16/" class="link">Stundu saraksts</a>
         </div>
-       <div class="box" id="box6">Laikapstākļi</div>
+        <div class="box" id="box6">Laikapstākļi</div>
         <div class="box" id="box7">
             <form id="add-user-form">
                 <input type="text" id="name" placeholder="Vārds" required>
@@ -53,6 +52,7 @@
             </form>
         </div>
     </div>
+
 
     <script src="{{ asset('script.js') }}"></script>
 </body>
